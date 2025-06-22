@@ -1,0 +1,35 @@
+.card-header{
+    color: white;
+}
+.screen{
+    display: flex;
+    justify-content: center;
+}
+.screen input{
+    width: 100%;
+    height: 40px;
+}
+
+.card-header{
+    justify-content: center;
+   
+}
+.keyPad{
+     display: flex;
+    justify-content: center;
+}
+table{
+    
+    width:100%;
+}
+td{
+    border: 2px solid rgb(216, 0, 0);
+    background-color: black;
+    
+}
+td .btns{
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: transparent;
+}
