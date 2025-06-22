@@ -18,14 +18,14 @@
         <div class="card-header bg-dark">calculator</div>
         <div class=" container-fluid calculatorBox">
           <div class=" row screen">
-            <input type="number" />
+            <input type="number" id="screen" />
           </div>
           <div class="row keyPad">
            
               <table>
                 <tbody>
                   <tr>
-                    <td><button class="btns  ">CLR</button></td>
+                    <td><button class="btns " onclick="clearScreen()">CLR</button></td>
                     <td>
                       <button class="btns ">X <sup>2</sup></button>
                     </td>
@@ -35,27 +35,27 @@
                     <td><button class="btns ">/</button></td>
                   </tr>
                   <tr>
-                    <td><button class="btns ">7</button></td>
-                    <td><button class="btns ">8</button></td>
-                    <td><button class="btns ">9</button></td>
-                    <td><button class="btns ">X</button></td>
+                    <td><button class="btns "onclick="screenEntry(7, screenLengthChecker)">7</button></td>
+                    <td><button class="btns "onclick="screenEntry(8, screenLengthChecker)">8</button></td>
+                    <td><button class="btns "onclick="screenEntry(9, screenLengthChecker)">9</button></td>
+                    <td><button class="btns "onclick="">X</button></td>
                   </tr>
                   <tr>
-                    <td><button class="btns ">4</button></td>
-                    <td><button class="btns ">5</button></td>
-                    <td><button class="btns ">6</button></td>
-                    <td><button class="btns ">-</button></td>
+                    <td><button class="btns "onclick="screenEntry(4, screenLengthChecker)">4</button></td>
+                    <td><button class="btns "onclick="screenEntry(5, screenLengthChecker)">5</button></td>
+                    <td><button class="btns "onclick="screenEntry(6, screenLengthChecker)">6</button></td>
+                    <td><button class="btns "onclick="">-</button></td>
                   </tr>
                   <tr>
-                    <td><button class="btns ">1</button></td>
-                    <td><button class="btns ">2</button></td>
-                    <td><button class="btns ">3</button></td>
-                    <td rowspan="2"><button class="btns " style="height: 100px;">+</button></td>
+                    <td><button class="btns "onclick="screenEntry(1, screenLengthChecker)">1</button></td>
+                    <td><button class="btns "onclick="screenEntry(2, screenLengthChecker)">2</button></td>
+                    <td><button class="btns "onclick="screenEntry(3, screenLengthChecker)">3</button></td>
+                    <td rowspan="2"><button class="btns "onclick="" style="height: 100px;">+</button></td>
                   </tr>
                   <tr>
-                    <td><button class="btns ">0</button></td>
-                    <td><button class="btns ">.</button></td>
-                    <td><button class="btns ">=</button></td>
+                    <td><button class="btns "onclick="screenEntry(0, screenLengthChecker)" >0</button></td>
+                    <td><button class="btns "onclick="screenEntry(, screenLengthChecker)">.</button></td>
+                    <td><button class="btns "onclick="screenEntry(=, screenLengthChecker)">=</button></td>
                     
                   </tr>
                 </tbody>
@@ -65,7 +65,7 @@
         </div>
       </div>
     </div>
-
+<script src="Script/script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
