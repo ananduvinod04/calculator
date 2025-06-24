@@ -1,38 +1,33 @@
-.card-header{
-    color: white;
+body {
+  display: flex;
+  justify-content: center0;
 }
-.screen{
-    display: flex;
-    justify-content: center;
-}
-.screen input{
-    width: 100%;
-    height: 40px;
-    border: none;
-    background-color: darkslategray;
-    color: white;
+input {
+  height: 60px;
+  border: 0;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  color: white;
+  font-size: 50px;
 }
 
-.card-header{
-    justify-content: center;
-   
+.card-body {
+  padding: 12px 4px;
 }
-.keyPad{
-     display: flex;
-    justify-content: center;
+
+.btn_custom {
+  width: 60px;
+  height: 50px;
+  font-size: larger;
+  font-weight: bolder;
+  color: white;
 }
-table{
-    
-    width:100%;
+
+table {
+  width: 100%;
 }
-td{
-    border: 2px solid rgb(66, 66, 66);
-    background-color: black;
-    
-}
-td .btns{
-    width: 100%;
-    height: 100%;
-    color: white;
-    background-color: transparent;
+
+tr {
+  display: flex;
+  justify-content: space-evenly;
 }

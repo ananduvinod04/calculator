@@ -1,75 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Calculator</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="Style/style.css">
-  </head>
-  <body>
-    <div class="container ">
-      <div class="card" style="width: fit-content">
-        <div class="card-header bg-dark">calculator .....   14digit</div>
-        <div class=" container-fluid calculatorBox">
-          <div class=" row screen">
-            <input type="number" id="screen" />
-          </div>
-          <div class="row keyPad">
-           
-              <table>
-                <tbody>
-                  <tr>
-                    <td><button class="btns " onclick="clearScreen()">CLR</button></td>
-                    <td>
-                      <button class="btns ">X <sup>2</sup></button>
+</head>
+
+<body>
+    <!-- conatainer for calculator window -->
+    <div class="card bg-dark" style="width: 18rem;">
+        <input class="bg-secondary" type="text" id="screen" readonly />
+        <div class=" card-body bg-dark">
+            <table>
+                <tr>
+                    <td><button class="btn bg-black btn_custom" onclick="calculatePercentage(clearScreen)">%</button>
                     </td>
-                    <td>
-                      <button class="btns ">X <sup>3</sup></button>
-                    </td>
-                    <td><button class="btns " onclick="operatorClick('/',clearScreen)">/</button></td>
-                  </tr>
-                  <tr>
-                    <td><button class="btns "onclick="screenEntry(7, screenLengthChecker)">7</button></td>
-                    <td><button class="btns "onclick="screenEntry(8, screenLengthChecker)">8</button></td>
-                    <td><button class="btns "onclick="screenEntry(9, screenLengthChecker)">9</button></td>
-                    <td><button class="btns "onclick="operatorClick('*',clearScreen)">X</button></td>
-                  </tr>
-                  <tr>
-                    <td><button class="btns "onclick="screenEntry(4, screenLengthChecker)">4</button></td>
-                    <td><button class="btns "onclick="screenEntry(5, screenLengthChecker)">5</button></td>
-                    <td><button class="btns "onclick="screenEntry(6, screenLengthChecker)">6</button></td>
-                    <td><button class="btns "onclick="operatorClick('-',clearScreen)">-</button></td>
-                  </tr>
-                  <tr>
-                    <td><button class="btns "onclick="screenEntry(1, screenLengthChecker)">1</button></td>
-                    <td><button class="btns "onclick="screenEntry(2, screenLengthChecker)">2</button></td>
-                    <td><button class="btns "onclick="screenEntry(3, screenLengthChecker)">3</button></td>
-                    <td rowspan="2"><button class="btns "onclick="operatorClick('+',clearScreen)" style="height: 100px;">+</button></td>
-                  </tr>
-                  <tr>
-                    <td><button class="btns "onclick="screenEntry(0, screenLengthChecker)" >0</button></td>
-                    <td><button class="btns "onclick="screenEntry('.', screenLengthChecker)">.</button></td>
-                    <td><button class="btns "onclick="calculateResult(screenLengthChecker)">=</button></td>
-                    
-                  </tr>
-                </tbody>
-              </table>
-           
-          </div>
+                    <td><button class="btn bg-black btn_custom" onclick="calculateSquare()">x<sup>2</sup></button></td>
+                    <td><button class="btn bg-black btn_custom" onclick="calculateCube()">x<sup>3</sup></button></td>
+                    <td><button class="btn bg-warning btn_custom" onclick="clearScreen()">clr</button></td>
+                </tr>
+                <tr>
+                    <td><button class="btn bg-black btn_custom" onclick="keyPress(7)">7</button></td>
+                    <td><button class="btn bg-black btn_custom" onclick="keyPress(8)">8</button></td>
+                    <td><button class="btn bg-black btn_custom" onclick="keyPress(9)">9</button></td>
+                    <td><button class="btn bg-secondary btn_custom" onclick="operatorClicked('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button class="btn bg-black btn_custom" onclick="keyPress(6)">6</button></td>
+                    <td><button class="btn bg-black btn_custom" onclick="keyPress(5)">5</button></td>
+                    <td><button class="btn bg-black btn_custom" onclick="keyPress(4)">4</button></td>
+                    <td><button class="btn bg-secondary btn_custom" onclick="operatorClicked('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="btn bg-black btn_custom" onclick="keyPress(3)">3</button></td>
+                    <td><button class="btn bg-black btn_custom" onclick="keyPress(2)">2</button></td>
+                    <td><button class="btn bg-black btn_custom" onclick="keyPress(1)">1</button></td>
+                    <td><button class="btn bg-secondary btn_custom" onclick="operatorClicked('*')">*</button></td>
+                </tr>
+                <tr>
+                    <td><button class="btn bg-black btn_custom" onclick="keyPress(0)">0</button></td>
+                    <td><button class="btn bg-black btn_custom" onclick="keyPress('.')">.</button></td>
+                    <td><button class="btn bg-secondary btn_custom" onclick="equals()">=</button></td>
+                    <td><button class="btn bg-secondary btn_custom" onclick="operatorClicked('/')">/</button></td>
+                </tr>
+            </table>
         </div>
-      </div>
     </div>
-<script src="Script/script.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <script src="Script/script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
